@@ -5,22 +5,18 @@ body{
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #000;
   font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 15px;
+  margin-top: 57px;
 }
 .left{
-  padding-left: 15px;
+  padding-left: 10px;
   display: inline-block;
-}
-.left h1{
-}
-.left h5{
-}
-.ref{
+  vertical-align: top;
 }
 .list{
   background: url("../images/notepad.png") no-repeat;
   width: 410px;
   height: 520px;
+  display: inline-block;
+  margin-left: 15px;
 }
