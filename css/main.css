@@ -8,15 +8,58 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 57px;
 }
+/*CSS for the title layout*/
 .left{
   padding-left: 10px;
+  vertical-align: top;
   display: inline-block;
+}
+.left h1{
+  font-size: 2.500em;
+  font-weight: 700;
+  padding-top: 13px;
+  letter-spacing: 0.014em;
+  color: #902d2e;
+}
+.left h5{
+  font-size: 1.000em;
+  padding-top: 20px;
+  line-height: 1.4em;
+  font-weight: 300;
+  color: #3476ff;
+  letter-spacing: 0.022em;
+}
+.left img{
   vertical-align: top;
 }
+.pen{
+  padding-top: 30px;
+  padding-left: 7px;
+}
+.eraser{
+  padding-top: 45px;
+  padding-left: 32px;
+}
+.ref{
+  font-size: 0.688em;
+  letter-spacing: 0.015em;
+  padding-top: 30px;
+  line-height: 1.4em;
+  color: #555859;
+  font-weight:300;
+}
+.ref a{
+  text-decoration: none;
+  color: #555859;
+}
+.ref a:hover{
+  text-decoration: underline;
+}
+/*CSS for the notepad list*/
 .list{
   background: url("../images/notepad.png") no-repeat;
   width: 410px;
   height: 520px;
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 40px;
 }
