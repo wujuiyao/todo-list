@@ -102,3 +102,12 @@ body{
   color: #fff;
   cursor: pointer;
 }
+/*Main Content*/
+#content{
+  border: 1px solid red;
+  height: 400px;
+  margin-top: 12px;
+  width: 83%;
+  margin-left: auto;
+  margin-right: auto;
+}
