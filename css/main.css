@@ -104,7 +104,6 @@ body{
 }
 /*Main Content*/
 #content{
-  border: 1px solid red;
   height: 400px;
   margin-top: 12px;
   width: 83%;
@@ -130,8 +129,7 @@ body{
   height: 15px;
   border: none;
 }
-.selected form,
-.standard form{
+.selected form{
   display: inline-block;
 }
 .selected,
@@ -141,6 +139,49 @@ body{
   height: 30px;
   padding-top: 10px;
   border-bottom: 2px solid #e8e8e8;
+}
+
+/*CSS for the extra detail*/
+#dropdown{
+  margin-top: 5px;
+}
+#dropdown input{
+  margin-left: 5px;
+}
+#dropdown input[type="text"]{
+  width: 205px;
+}
+.quantity, .notes{
+  height: 30px;
+  padding-top: 10px;
+  background-color: #f4ead5;
+}
+.quantity{
+  border-bottom: 1px solid #c5c5c5;
+  padding-left: 30px;
+  width: 91.3%;
+}
+.notes{
+  width: 92.5%;
+  height: 95px;
+}
+.notes{
+  padding-left: 26px;
+}
+.notes input{
+  margin-left: 0px !important;
+}
+.notes input[type="text"]{
+  width: 271px !important;
+  height: 60px;
+}
+.notes input[value="Notes:"]{
+  top: 0;
+}
+.notes button{
+  margin-top: 8px;
+  margin-right: 10px;
+  float: right;
 }
 
 
