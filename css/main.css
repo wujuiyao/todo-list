@@ -111,3 +111,55 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+.selected input[type="text"],
+.standard input[type="text"],
+.active input[type="text"]{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+/*Item Selected CSS*/
+.selected{
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  border-bottom: 2px solid #e8e8e8;
+}
+.selected form{
+  display: inline-block;
+}
+.selected input[type="checkbox"]{
+  width: 15px;
+  height: 15px;
+  border: 1px solid #dadada;
+}
+.selected input[type="text"]{
+  height: 25px;
+  border: none;
+  font-size: 1.000em;
+  padding-left: 5px;
+  color: #bec0c4;
+  width: 270px;
+}
+.selected input[type="text"]:focus, textarea:focus{
+  box-shadow: none;
+  border: none;
+  background-color: #f4ead5;
+  outline: 0;
+  color: #3c3c3e;
+}
+.selected button{
+  margin-left: 5px;
+  border: none;
+  background-color: white;
+  cursor:pointer;
+}
+/*Item Standard CSS*/
+.standard{
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  border-bottom: 2px solid #e8e8e8;
+}
+.standard form{
+  display: inline-block;
+}
