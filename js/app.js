@@ -8,10 +8,15 @@ $(document).ready(function(){
    $('.selected').hide();
    $('.standard').hide();
    $('.active').hide();
-  //The user clicks on the "Add Item"
+
+  //Capture user's click event
   $('body').on('click', '.add-item', function(){
-    console.log("testing");
+    console.log("Testing");
+    //add one active list
+    $('.active').show();
   });
 
+
   //use prepend to add the x arrow if they click on the selected
+  //use focus jquery api
 });

@@ -23,6 +23,7 @@
       <p class="ref">Thanks to<br><a href="http://www.psd100.com/muji-stationery-psd/">http://www.psd100.com/muji-stationery-psd/</a></p>
     </section>
     <section class="list">
+
       <div id="top-ui">
         <div class="title">
         <form action=""><input type="text" name="" value="List Title"></form>
@@ -30,17 +31,19 @@
         <!--- Add item Button-->
         <div class="add-item">Add Item</div>
       </div>
+
       <div id="content">
         <!-- Selected -->
-        <div class="selected">
-          <form action="">
-          <input type="checkbox" name="" value="item" checked>
-          <input type="text" name="" value="Fresh Fruits"></form>
-          <button><img src="images/delete.png" alt=""></button>
-        </div>
+          <ul class="selected">
+            <li>
+              <form action="">
+              <input type="checkbox" name="" value="item" checked>
+              <input type="text" name="" value="Fresh Fruits"></form>
+              <button><img src="images/delete.png" alt=""></button>
+            </li>
+          </ul>
         <!--Standard -->
-        <div class="standard">
-          <ul>
+          <ul class="standard">
             <li>
               <form action="">
               <input type="checkbox" name="" value="item">
@@ -48,10 +51,8 @@
               </form>
             </li>
           </ul>
-        </div>
         <!-- Active -->
-        <div class="active">
-          <ul>
+          <ul class="active">
             <li>
               <form action="" >
                 <input type="checkbox" name="" value="item">
@@ -66,7 +67,6 @@
               </div>
             </li>
           </ul>
-        </div>
       </div>
     </section>
   </div>

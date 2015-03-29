@@ -145,7 +145,10 @@ body{
   padding-top: 10px;
   border-bottom: 2px solid #e8e8e8;
 }
-
+.active{
+  width: 340px;
+  max-width: 340px;
+}
 /*CSS for the extra detail*/
 #dropdown{
   margin-top: 5px;
