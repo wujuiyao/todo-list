@@ -17,54 +17,45 @@
   <div class="container">
     <section class="left">
       <h1>Shopping List</h1>
-      <h5>Another Thinkful Project<br>by Richard Wu</h5>
-      <img class="pen" src="images/pen.png">
-      <img class="eraser" src="images/eraser.png">
-      <p class="ref">Thanks to<br><a href="http://www.psd100.com/muji-stationery-psd/">http://www.psd100.com/muji-stationery-psd/</a></p>
+      <h5>Another Thinkful Project</h5>
+      <h5>by Richard Wu</h5>
+      <img class="pen" src="images/pen.png" />
+      <img class="eraser" src="images/eraser.png" />
+      <p class="ref">Thanks to
+        <a href="http://www.psd100.com/muji-stationery-psd/">http://www.psd100.com/muji-stationery-psd/</a>
+      </p>
     </section>
-    <section class="list">
 
+    <section class="list">
       <div id="top-ui">
-        <div class="title">
-        <form action=""><input type="text" name="" value="List Title"></form>
-        </div>
-        <!--- Add item Button-->
+        <div class="title"><input type="text" name="" value="List Title"></div>
         <div class="add-item">Add Item</div>
       </div>
-
       <div id="content">
         <!-- Selected -->
           <ul class="selected">
             <li>
-              <form action="">
               <input type="checkbox" name="" value="item" checked>
-              <input type="text" name="" value="Fresh Fruits"></form>
+              <input type="text" name="" value="Fresh Fruits">
               <button><img src="images/delete.png" alt=""></button>
             </li>
           </ul>
         <!--Standard -->
           <ul class="standard">
             <li>
-              <form action="">
               <input type="checkbox" name="" value="item">
-              <input type="text" name="" value="Ice Cream"></form>
-              </form>
+              <input type="text" name="" value="Ice Cream">
             </li>
           </ul>
         <!-- Active -->
           <ul class="active">
             <li>
-              <form action="" >
-                <input type="checkbox" name="" value="item">
-                <input type="text" name="" value="New Items">
-              </form>
-              <div id="dropdown">
-                <form action="" class="quantity">Quantity:<input type="text" name="quantity" value=""></form>
-                <form action="" class="notes">
-                  <input type="text" name="notes" value="Notes:">
-                  <button>Done</button>
-                </form>
-              </div>
+              <input type="checkbox" name="" value="item">
+              <input type="text" name="" value="New Items">
+                <div id="dropdown">
+                  <p class="quantity">Quantity:<input type="text" name="quantity" value=""></p>
+                  <p class="notes"><input type="text" name="notes" value="Notes:"><button>Done</button></p>
+                </div>
             </li>
           </ul>
       </div>

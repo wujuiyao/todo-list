@@ -29,6 +29,9 @@ body{
   color: #3476ff;
   letter-spacing: 0.022em;
 }
+.left h5:nth-child(3){
+  padding-top: 2px;
+}
 .left img{
   vertical-align: top;
 }
@@ -191,9 +194,6 @@ body{
   margin-right: 10px;
   float: right;
 }
-
-
-
 .selected button{
   margin-left: 5px;
   border: none;
