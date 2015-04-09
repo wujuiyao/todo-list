@@ -27,7 +27,7 @@ $(document).ready(function(){
       $('.active #target').focus();
       // 1.1.2 Previous created List will only show the basic list
       if(newList === 1){
-        $('.active').hide('#item0 #dropdown');
+        $('.active').hasClass('#item0 #dropdown').hide();
       }else if(newList === 2){
       }else if(newList === 3){
       }else if(newList === 4){
