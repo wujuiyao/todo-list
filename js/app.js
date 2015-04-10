@@ -6,46 +6,48 @@ $(document).ready(function(){
   //hide the initial html
   $('.selected').hide();
   $('.standard').hide();
-  //$('.active').hide();
+  $('.active #dropdown').hide();
 
-//   1. Add a ‘New List’ (by clicking on the Add-Item Button)
-  $('.add-item').click(function(){
-    console.log('Add Item clicked');
-    //1.1 Set a var for the all the added list
-    var newList = $('.active li').length;
-    console.log('item'+-newList);
-    //Set var for current list
-    var currentList = newList;
-    //Set var for prev list
-    var prevList = newList-1;
-    //1.2 Set a max list of 6
-    if(newList <= 5){
-      $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"><div id="dropdown"><p action="" class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p action="" class="notes"><input type="text" name="notes" value="Notes:"><button>Done</button></p></div></li>')
-      .css("border-bottom", "2px solid #e8e8e8");
-      console.log($('.active #item-'+newList+''));
-      //1.1.1 Mouse should be focused on the ‘New Item Text Input Bar’
-      $('.active #target').focus();
-      // 1.1.2 Previous created List will only show the basic list
-      if(newList === 1){
-        $('.active').hasClass('#item0 #dropdown').hide();
-      }else if(newList === 2){
-      }else if(newList === 3){
-      }else if(newList === 4){
-      }
-
-    }
-
-    //1.3 Create an Alert that you can only set 6 List for now
+//*** Function: Create an Alert by 6 Lists
+  function alert6(){
     var count = 0;
-    $('.add-item').click(function(){
-      count += 1;
-      if (count == 6){
-        alert("Sorry you can only have 6 Items for now!");
-      }
-    });
+    count += 1;
+    if (count == 6){
+      alert("Sorry you can only have 6 Items for now!");
+    }
+  }
 
+//*** Function: Add new List
+  function addNewList(){
+  // Variable for counting the lists
+  var newList = $('.active li').length;
+    if(newList <= 5){
+      console.log($('.active #item-'+newList+''));
+      $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"></li><br>');
+      $('.active #dropdown').show().appendTo($('.active'));
+      $('.active #target').focus();
+    }
+  }
+//*** Function: Hide List
+  function hideDetail(){
+    $('#done').on('click', function(){
+      $('.active #dropdown').hide();
+    });
+  }
+//*** Function Show List
+  function showDetail(){
+
+  }
+
+// Add a ‘New List’ (by clicking on the Add-Item Button)
+  $('.add-item').on('click', function(){
+    addNewList();
+    alert6();
+    hideDetail();
+    showDetail();
   });
 
+});
 
 //
 // 1.2 The user clicks out of the ‘Item List’ area
@@ -67,5 +69,6 @@ $(document).ready(function(){
   //toggle
   //use the val() to create a max item list
 
+  // <div id="dropdown"><p action="" class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p action="" class="notes"><input type="text" name="notes" value="Notes:"><button>Done</button></p></div>
+  // .append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"></li><br>');
   //slideUp();
-});
