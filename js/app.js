@@ -31,16 +31,27 @@ $(document).ready(function(){
 //*** Function: Hide Details
   function hideDetail(){
     $('#done').click(function(){
-      $('.active #dropdown').slideToggle("slow");
+      $('.active #dropdown').hide("slow");
     });
   }
 //*** Function: Show Details
+  function showDetail(){
+   $('.active #target').dblclick(function(){
+     $(this).data('clicked', true);
+
+     if($('.active #target').data('clicked')){
+       $('.active #dropdown').show("fast");
+     }
+   });
+
+  }
 
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
     alert6();
     hideDetail();
+    showDetail();
   });
 
 });
