@@ -28,23 +28,19 @@ $(document).ready(function(){
       $('.active #target').focus();
     }
   }
-//*** Function: Hide List
+//*** Function: Hide Details
   function hideDetail(){
-    $('#done').on('click', function(){
-      $('.active #dropdown').hide();
+    $('#done').click(function(){
+      $('.active #dropdown').slideToggle("slow");
     });
   }
-//*** Function Show List
-  function showDetail(){
-
-  }
+//*** Function: Show Details
 
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
     alert6();
     hideDetail();
-    showDetail();
   });
 
 });
