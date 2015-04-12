@@ -8,15 +8,6 @@ $(document).ready(function(){
   $('.standard').hide();
   $('.active #dropdown').hide();
 
-//*** Function: Create an Alert by 6 Lists
-  function alert6(){
-    var count = 0;
-    count += 1;
-    if (count == 6){
-      alert("Sorry you can only have 6 Items for now!");
-    }
-  }
-
 //*** Function: Add new List
   function addNewList(){
   // Variable for counting the lists
@@ -34,22 +25,20 @@ $(document).ready(function(){
       $('.active #dropdown').hide("slow");
     });
   }
+
 //*** Function: Show Details
   function showDetail(){
-   $('.active #target').dblclick(function(){
-     $(this).data('clicked', true);
+    $('.active #target').dblclick(function(){
+    $(this).data('clicked', true);
+    if($('.active #target').data('clicked')){
+      $('.active #dropdown').show("fast");
+    }});
+   }
 
-     if($('.active #target').data('clicked')){
-       $('.active #dropdown').show("fast");
-     }
-   });
-
-  }
 
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
-    alert6();
     hideDetail();
     showDetail();
   });
