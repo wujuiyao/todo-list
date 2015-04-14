@@ -16,10 +16,12 @@ $(document).ready(function(){
       $('.active #dropdown').show().appendTo($('.active'));
       $('.active #target').focus();
     }
+    //jquery that activates the details, delegate jquery
+    //Show detail code
+    $('.active').on('dblclick','li',function(){
+     $('.active #dropdown').show().appendTo(this);
+    });
   }
-
-//*** Function: Show Details
-
 
 //*** Function: Hide Details
   $('#done').click(function(){
@@ -29,6 +31,7 @@ $(document).ready(function(){
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
+
   });
 
 });
