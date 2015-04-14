@@ -1,6 +1,3 @@
-//What to do with Add item
-
-
 $(document).ready(function(){
   console.log("ready!");
   //hide the initial html
@@ -14,33 +11,24 @@ $(document).ready(function(){
   var newList = $('.active li').length;
     if(newList <= 5){
       console.log($('.active #item-'+newList+''));
-      $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"></li><br>');
+      console.log($('.active #target-'+newList+''));
+      $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target-'+newList+'"></li><br>');
       $('.active #dropdown').show().appendTo($('.active'));
       $('.active #target').focus();
     }
   }
-//*** Function: Hide Details
-  function hideDetail(){
-    $('#done').click(function(){
-      $('.active #dropdown').hide("slow");
-    });
-  }
 
 //*** Function: Show Details
-  function showDetail(){
-    $('.active #target').dblclick(function(){
-    $(this).data('clicked', true);
-    if($('.active #target').data('clicked')){
-      $('.active #dropdown').show("fast");
-    }});
-   }
 
+
+//*** Function: Hide Details
+  $('#done').click(function(){
+    $('.active #dropdown').hide("slow");
+  });
 
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
-    hideDetail();
-    showDetail();
   });
 
 });
