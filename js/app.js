@@ -21,6 +21,13 @@ $(document).ready(function(){
     $('.active').on('dblclick','li',function(){
      $('.active #dropdown').show().appendTo(this);
     });
+    //Checked the tickbox
+    //use the val from jquery
+    $('.active input').val(['item']);
+
+    // $('.active').on('checked','input:checkbox', function(){
+    //   $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
+    // });
   }
 
 //*** Function: Hide Details
@@ -31,7 +38,6 @@ $(document).ready(function(){
 // Add a ‘New List’ (by clicking on the Add-Item Button)
   $('.add-item').on('click', function(){
     addNewList();
-
   });
 
 });
