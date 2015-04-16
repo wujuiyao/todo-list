@@ -17,17 +17,16 @@ $(document).ready(function(){
       $('.active #target').focus();
     }
     //jquery that activates the details, delegate jquery
-    //Show detail code
+    //Show details of each item
     $('.active').on('dblclick','li',function(){
      $('.active #dropdown').show().appendTo(this);
     });
+
     //Checked the tickbox
     //use the val from jquery
-    $('.active input').val(['item']);
-
-    // $('.active').on('checked','input:checkbox', function(){
-    //   $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
-    // });
+    $('.active').on('checked','input:checkbox', function(){
+    $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
+     });
   }
 
 //*** Function: Hide Details
