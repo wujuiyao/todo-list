@@ -1,19 +1,23 @@
 $(document).ready(function(){
-  console.log("ready!");
   //hide the initial html
   $('.selected').hide();
   $('.standard').hide();
   $('.active #dropdown').hide();
+  var dropdown = '<div id="dropdown"><p class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p class="notes"><input type="text" name="notes" value="Notes:"><button id="done">Done</button></p></div>';
 
-//*** Function: Add new List
+  // Add a ‘New List’ (by clicking on the Add-Item Button)
+    $('.add-item').on('click', function(){
+      addNewList();
+    });
+  //*** Function: Add new List
   function addNewList(){
-  // Variable for counting the lists
+  // list variable
   var newList = $('.active li').length;
     if(newList <= 5){
       console.log($('.active #item-'+newList+''));
       console.log($('.active #target-'+newList+''));
       $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target-'+newList+'"></li><br>');
-      $('.active #dropdown').show().appendTo($('.active'));
+      $(dropdown).appendTo($('.active'));
       $('.active #target').focus();
     }
     //jquery that activates the details, delegate jquery
@@ -25,7 +29,7 @@ $(document).ready(function(){
     //Checked the tickbox
     //use the val from jquery
     $('.active').on('checked','input:checkbox', function(){
-    $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
+      $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
      });
   }
 
@@ -34,10 +38,6 @@ $(document).ready(function(){
     $('.active #dropdown').hide("slow");
   });
 
-// Add a ‘New List’ (by clicking on the Add-Item Button)
-  $('.add-item').on('click', function(){
-    addNewList();
-  });
 
 });
 
