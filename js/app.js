@@ -18,7 +18,7 @@ $(document).ready(function(){
       console.log($('.active #target-'+newList+''));
       $('.active').append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target-'+newList+'"></li><br>');
       $(dropdown).appendTo($('.active'));
-      $('.active #target').focus();
+      $('.active #target-'+newList+'').focus();
     }
     //jquery that activates the details, delegate jquery
     //Show details of each item
