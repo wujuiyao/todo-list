@@ -1,50 +1,33 @@
 $(document).ready(function(){
 
-
-
-  $('.add-item').on('click.createList', function(){
+  $('.add-item').on('click.createList', function(evt){
 
     var newList = $('.active li').length;
     var list ='<li id="item-'+newList+'"><input type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>';
-    var dropdown = '<div id="dropdown" class="dropdown-'+newList+'"><p class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p class="notes"><input type="text" name="notes" value="Notes:"><button id="done">Done</button></p></div>';
-    var wholeList = $(list).add(dropdown);
+    var dropdown = '<div class="dropdown-'+newList+'" id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button id="done">Done</button></p></div>';
+    // var wholeList = $(list).add(dropdown);
 
     if(newList <= 5){
-      $('.active').append(wholeList);
+      $('.active').append(list);
       $('.active [value="New Items"]').focus();
+      if($('.active [value="New Items"]').is(':focus')){
+          console.log("there is something in focus");
+      }
     }
     if(newList >=5){
       $('.add-item').off('click.createList');
       alert("no more than 6 please");
     }
+
   });
 
-
-
-
-
-
-
-
-  //jquery that activates the details, delegate jquery
-  //Show details of each item
-  $('.active').on('dblclick','li',function(){
-   $('.active #dropdown').show().appendTo(this);
-  });
-
-  //Checked the tickbox
-  //use the val from jquery
-  $('.active').on('checked','input:checkbox', function(){
-    $('.active li').append('<button><img src="images/delete.png" alt=""></button>');
-   });
-
-//*** Function: Hide Details
-  $('#done').click(function(){
-    $('.active #dropdown').hide("slow");
-  });
 
 
 });
+
+//$('.active').on("click","li", function(evt){
+//    alert($(this).text());
+//});
 
 //
 // 1.2 The user clicks out of the ‘Item List’ area
