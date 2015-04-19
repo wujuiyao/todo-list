@@ -1,16 +1,16 @@
 $(document).ready(function(){
 
-  var dropdown = '<div id="dropdown"><p class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p class="notes"><input type="text" name="notes" value="Notes:"><button id="done">Done</button></p></div>';
 
 
   $('.add-item').on('click.createList', function(){
 
     var newList = $('.active li').length;
-    var list ='<li id="item-'+newList+'"><input  type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>';
+    var list ='<li id="item-'+newList+'"><input type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>';
+    var dropdown = '<div id="dropdown" class="dropdown-'+newList+'"><p class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p class="notes"><input type="text" name="notes" value="Notes:"><button id="done">Done</button></p></div>';
+    var wholeList = $(list).add(dropdown);
 
     if(newList <= 5){
-      $('.active').append(list);
-      $(dropdown).appendTo($('.active'));
+      $('.active').append(wholeList);
       $('.active [value="New Items"]').focus();
     }
     if(newList >=5){
