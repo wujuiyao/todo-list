@@ -1,25 +1,30 @@
 $(document).ready(function(){
 
-  $('.add-item').on('click.createList', function(evt){
+  var maxAppend = 0;
 
-    var newList = $('.active li').length;
-    var list ='<li id="item-'+newList+'"><input type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>';
-    var dropdown = '<div class="dropdown-'+newList+'" id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button id="done">Done</button></p></div>';
-    // var wholeList = $(list).add(dropdown);
+  $('.add-item').on('click.createList', addItem);
 
-    if(newList <= 5){
-      $('.active').append(list);
-      $('.active [value="New Items"]').focus();
-      if($('.active [value="New Items"]').is(':focus')){
-          console.log("there is something in focus");
-      }
-    }
-    if(newList >=5){
-      $('.add-item').off('click.createList');
-      alert("no more than 6 please");
-    }
+  function addItem(){
 
-  });
+    if (maxAppend >= 6) return;
+
+    var dropdownList = $('.active .dropdown-'+newList+'').length;
+    var list =$('<li id="item-'+newList+'"><input type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>');
+    var dropdown =$('<div class="dropdown-'+newList+'" id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button id="done">Done</button></p></div>');
+    var wholeList = $(list).add(dropdown);
+                    maxAppend++;
+
+    $('.active').append(wholeList);
+    $('.active [value="New Items"]').val();
+    $('.active [value="New Items"]').focus();
+
+    if($('#item-'+newList+'').length == 2){
+      alert('hello world');
+     }
+
+
+
+  }
 
 
 
@@ -54,3 +59,13 @@ $(document).ready(function(){
   // <div id="dropdown"><p action="" class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p action="" class="notes"><input type="text" name="notes" value="Notes:"><button>Done</button></p></div>
   // .append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"></li><br>');
   //slideUp();
+
+
+      // if(newList <= 5){
+      //   $('.active').append(list);
+      //   $('.active [value="New Items"]').focus();
+      // }
+      // if(newList >=5){
+      //   $(addItem).off('click.createList');
+      //   alert("no more than 6 please");
+      // }
