@@ -7,26 +7,23 @@ $(document).ready(function(){
   function addItem(){
 
     if (maxAppend >= 6) return;
-
+    var newList = $('#item-'+newList+'').length;
     var dropdownList = $('.active .dropdown-'+newList+'').length;
+
     var list =$('<li id="item-'+newList+'"><input type="checkbox" name="" value="item" ><input id="target-'+newList+'" type="text" name="" value="New Items" ></li><br>');
     var dropdown =$('<div class="dropdown-'+newList+'" id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button id="done">Done</button></p></div>');
     var wholeList = $(list).add(dropdown);
                     maxAppend++;
 
-    $('.active').append(wholeList);
+    $('.active').append(list);
+    var addedList = $('.active li').length;
+    $(dropdown).appendTo(list);
     $('.active [value="New Items"]').val();
     $('.active [value="New Items"]').focus();
-
-    if($('#item-'+newList+'').length == 2){
-      alert('hello world');
-     }
-
-
+    return addedList;
 
   }
-
-
+//once the the add has been clciked return the list number
 
 });
 
