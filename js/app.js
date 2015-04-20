@@ -29,14 +29,6 @@ $(document).ready(function(){
 //    alert($(this).text());
 //});
 
-//
-// 1.2 The user clicks out of the ‘Item List’ area
-// 1.2.1 The detailed part will go away
-//
-// 1.3 The user clicks on the “Done” Button
-// 1.3.1 The detailed part will go away
-
-
   // use this to check if is true of false prop = property
   //$('...').prop()
   //use prepend to add the x arrow if they click on the selected
@@ -50,17 +42,3 @@ $(document).ready(function(){
   //hover()
   //toggle
   //use the val() to create a max item list
-
-  // <div id="dropdown"><p action="" class="quantity">Quantity:<input type="text" name="quantity" value=""></p><p action="" class="notes"><input type="text" name="notes" value="Notes:"><button>Done</button></p></div>
-  // .append('<li><input type="checkbox" name="" value="item" id="item-'+newList+'"><input type="text" name="" value="New Items" id="target"></li><br>');
-  //slideUp();
-
-
-      // if(newList <= 5){
-      //   $('.active').append(list);
-      //   $('.active [value="New Items"]').focus();
-      // }
-      // if(newList >=5){
-      //   $(addItem).off('click.createList');
-      //   alert("no more than 6 please");
-      // }
