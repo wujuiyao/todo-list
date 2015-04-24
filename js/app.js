@@ -1,10 +1,14 @@
 $(document).ready(function(){
 
   var maxAppend = 0;
-  var buttonArr = ['.button-0','.button-1','.button-2','button-3','button-4','button-5'];
-
 
   $('.add-item').click(addItem);
+
+  $('.active').on('click', 'li', function(){
+    $('li').each(function(){
+
+    });
+  });
 
 
   //try one using each, one using idea from Nicholas.
