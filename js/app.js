@@ -5,13 +5,9 @@ $(document).ready(function(){
 
 
   $('.add-item').click(addItem);
-  $.each( buttonArr, function( i, bA ){
-     alert( "Index" + i + ": " + bA );
 
 
-  });
-
-  //try one using each, one using index and one using idea from Nicholas.
+  //try one using each, one using idea from Nicholas.
 
   function addItem(){
     if (maxAppend >= 6) return;
