@@ -2,16 +2,28 @@ $(document).ready(function(){
 
   var maxAppend = 0;
 
+  $( "button" ).click(function() {
+  var text = $( this ).text();
+  $( "input" ).val( text );
+});
+
   $('.add-item').click(addItem);
 
   $('.active').on('click', 'li', function(){
-    $('li').each(function(){
+    //check out val
+    $('.button-0').data('clicked', true);
+    if($('.button-0').data('clicked')){
+      alert("First Button has been Clicked");
+    }
+    $('.button-1').data('clicked', true);
+    if($('.button-1').data('clicked')){
+      alert("Second has been clicked");
+    }
 
-    });
   });
 
 
-  //try one using each, one using idea from Nicholas.
+
 
   function addItem(){
     if (maxAppend >= 6) return;
