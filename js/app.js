@@ -2,28 +2,41 @@ $(document).ready(function(){
 
   var maxAppend = 0;
 
-  $( "button" ).click(function() {
-  var text = $( this ).text();
-  $( "input" ).val( text );
-});
-
   $('.add-item').click(addItem);
 
-  $('.active').on('click', 'li', function(){
-    //check out val
-    $('.button-0').data('clicked', true);
-    if($('.button-0').data('clicked')){
-      alert("First Button has been Clicked");
-    }
-    $('.button-1').data('clicked', true);
-    if($('.button-1').data('clicked')){
-      alert("Second has been clicked");
-    }
+  $('.active').on('mouseenter', function(){
+
+      $('li').find('.button-0').click(function(){
+        event.stopPropagation();
+        console.log('button-0 has been clicked');
+      });
+
+      $('li').find('.button-1').click(function(){
+        event.stopPropagation();
+        console.log('button-1 has been lcicked');
+      });
+
+      $('li').find('.button-2').click(function(){
+        event.stopPropagation();
+        console.log('Button-2 has been clicked');
+      });
+
+      $('li').find('.button-3').click(function(){
+        event.stopPropagation();
+        console.log("button-3");
+      });
+
+      $('li').find('.button-4').click(function(){
+        event.stopPropagation();
+        console.log("Button-4");
+      });
+
+      $('li').find('.button-5').click(function(){
+        event.stopPropagation();
+        console.log("Button-5");
+      });
 
   });
-
-
-
 
   function addItem(){
     if (maxAppend >= 6) return;
@@ -35,7 +48,7 @@ $(document).ready(function(){
 
     $('.active').append(list);
     $(dropdown).appendTo(list);
-    //** adding classes for further reference
+    //** adding dynamic classes
     $('.active li').addClass(function(index){
       return "item-" + index;
     });
@@ -46,7 +59,6 @@ $(document).ready(function(){
       return "button-" + index;
     });
     //**End
-    // Focus on the added Item
     $('.active [value="New Items"]').focus();
   }
 });
