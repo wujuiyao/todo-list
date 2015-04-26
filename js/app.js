@@ -46,6 +46,13 @@ $(document).ready(function(){
       $('.item-2').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-2').slideDown();
       });
+      $('.item-2 :checkbox').click(function(){
+         if($(this).is(':checked')){
+          $('.delete-list-2').show();
+         } else if(!$(this).is(':checked')){
+          $('.delete-list-2').hide();
+         }
+      });
       //Fourth List
       $('li').find('.button-3').click(function(){
         event.stopPropagation();
@@ -53,6 +60,13 @@ $(document).ready(function(){
       });
       $('.item-3').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-3').slideDown();
+      });
+      $('.item-2 :checkbox').click(function(){
+         if($(this).is(':checked')){
+          $('.delete-list-3').show();
+         } else if(!$(this).is(':checked')){
+          $('.delete-list-3').hide();
+         }
       });
       //Fifth List
       $('li').find('.button-4').click(function(){
@@ -62,6 +76,13 @@ $(document).ready(function(){
       $('.item-4').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-4').slideDown();
       });
+      $('.item-4 :checkbox').click(function(){
+         if($(this).is(':checked')){
+          $('.delete-list-4').show();
+         } else if(!$(this).is(':checked')){
+          $('.delete-list-4').hide();
+         }
+      });
       //Sixth List
       $('li').find('.button-5').click(function(){
         event.stopPropagation();
@@ -69,6 +90,13 @@ $(document).ready(function(){
       });
       $('.item-5').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-5').slideDown();
+      });
+      $('.item-5 :checkbox').click(function(){
+         if($(this).is(':checked')){
+          $('.delete-list-5').show();
+         } else if(!$(this).is(':checked')){
+          $('.delete-list-5').hide();
+         }
       });
   }
 
@@ -78,7 +106,7 @@ $(document).ready(function(){
     var maxAppend = 0;
     if (maxAppend >= 6) return;
 
-    var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li>');
+    var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li><br>');
     var deleteButton = $('<button id="delete-list"><img src="images/delete.png" alt=""></button>');
     var dropdown =$('<div id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button>Done</button></p></div>');
     var wholeList = $(list).add(dropdown);
