@@ -3,40 +3,57 @@ $(document).ready(function(){
   var maxAppend = 0;
 
   $('.add-item').click(addItem);
+  $('.active').on('mouseenter', manageItems);
 
-  $('.active').on('mouseenter', function(){
-
+  function manageItems(){
       $('li').find('.button-0').click(function(){
         event.stopPropagation();
-        console.log('button-0 has been clicked');
+        $('.dropdown-0').slideUp();
+      });
+      $('.item-0').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-0').slideDown();
       });
 
       $('li').find('.button-1').click(function(){
         event.stopPropagation();
-        console.log('button-1 has been lcicked');
+        $('.dropdown-1').slideUp();
+      });
+      $('.item-1').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-1').slideDown();
       });
 
       $('li').find('.button-2').click(function(){
         event.stopPropagation();
-        console.log('Button-2 has been clicked');
+        $('.dropdown-2').slideUp();
+      });
+      $('.item-2').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-2').slideDown();
       });
 
       $('li').find('.button-3').click(function(){
         event.stopPropagation();
-        console.log("button-3");
+        $('.dropdown-3').slideUp();
+      });
+      $('.item-3').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-3').slideDown();
       });
 
       $('li').find('.button-4').click(function(){
         event.stopPropagation();
-        console.log("Button-4");
+        $('.dropdown-4').slideUp();
+      });
+      $('.item-4').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-4').slideDown();
       });
 
       $('li').find('.button-5').click(function(){
         event.stopPropagation();
-        console.log("Button-5");
+        $('.dropdown-5').slideUp();
       });
-
-  });
+      $('.item-5').find($('[value="New Items"]')).dblclick(function(){
+        $('.dropdown-5').slideDown();
+      });
+  }
 
   function addItem(){
     if (maxAppend >= 6) return;
