@@ -1,20 +1,55 @@
 $(document).ready(function(){
 
+  var maxAppend = 0;
 
   $('.add-item').click(addItem);
 
+  var allCloseButtons =['.button-0', '.button-1', '.button-2', '.button-3', '.button-4', '.button-5'];
 
-    $('.active').on('click','.button-0, .button-1',manageItems);
 
+  $('.active').on('click',allCloseButtons,function(){
+    //this allCloseButtons will effect
+      for(var i = 0; i <= 5; i++){
+        $('.button-'+i).data('clicked', true);
+        if($('.button-'+i).data('clicked')){
+          $('.dropdown-'+i).slideUp();
+        }
+       }
+    });
+
+//**********Close Dropdown Function************
+function closeButton(){
+
+    $('.button-0').data('clicked', true);
+      if($('.button-'+0).data('clicked')){
+        $('.dropdown-'+0).slideUp();
+      }
+    $('.button-1').data('clicked', true);
+      if($('.button-1').data('clicked')){
+        $('.dropdown-1').slideUp();
+      }
+    $('.button-2').data('clicked', true);
+      if($('.button-2').data('clicked')){
+        $('.dropdown-2').slideUp();
+      }
+    $('.button-3').data('clicked', true);
+      if($('.button-3').data('clicked')){
+        $('.dropdown-3').slideUp();
+      }
+    $('.button-4').data('clicked', true);
+      if($('.button-4').data('clicked')){
+        $('.dropdown-4').slideUp();
+      }
+    $('.button-5').data('clicked', true);
+      if($('.button-5').data('clicked')){
+        $('.dropdown-5').slideUp();
+      }
+}
 
 
 //**********Manage Item Function************
   function manageItems(){
       //First List
-      $('li').find('.button-0').click(function(){
-         event.stopPropagation();
-         $('.dropdown-0').slideUp();
-      });
       $('.item-0').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-0').slideDown();
       });
@@ -29,10 +64,6 @@ $(document).ready(function(){
          });
       });
       //Second List
-      $('li').find('.button-1').click(function(){
-        event.stopPropagation();
-        $('.dropdown-1').slideUp();
-      });
       $('.item-1').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-1').slideDown();
       });
@@ -47,10 +78,6 @@ $(document).ready(function(){
          });
       });
       //Third List
-      $('li').find('.button-2').click(function(){
-        event.stopPropagation();
-        $('.dropdown-2').slideUp();
-      });
       $('.item-2').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-2').slideDown();
       });
@@ -65,10 +92,6 @@ $(document).ready(function(){
          });
       });
       //Fourth List
-      $('li').find('.button-3').click(function(){
-        event.stopPropagation();
-        $('.dropdown-3').slideUp();
-      });
       $('.item-3').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-3').slideDown();
       });
@@ -83,10 +106,6 @@ $(document).ready(function(){
          });
       });
       //Fifth List
-      $('li').find('.button-4').click(function(){
-        event.stopPropagation();
-        $('.dropdown-4').slideUp();
-      });
       $('.item-4').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-4').slideDown();
       });
@@ -101,10 +120,6 @@ $(document).ready(function(){
          });
       });
       //Sixth List
-      $('li').find('.button-5').click(function(){
-        event.stopPropagation();
-        $('.dropdown-5').slideUp();
-      });
       $('.item-5').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-5').slideDown();
       });
@@ -121,10 +136,9 @@ $(document).ready(function(){
   }
 
 //**********Add Item Function************
-
   function addItem(){
-    var maxAppend = 0;
-    if (maxAppend >= 6) return;
+
+    if (maxAppend >= 5) return;
 
     var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li>');
     var deleteButton = $('<button id="delete-list"><img src="images/delete.png" alt=""></button>');
@@ -152,3 +166,6 @@ $(document).ready(function(){
     $('.active [value="New Items"]').focus();
   }
 });
+
+//    var allDropdowns = '.dropdown-';
+//   //  $(allDropdowns+i).slideUp();
