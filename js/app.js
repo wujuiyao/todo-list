@@ -6,7 +6,6 @@ $(document).ready(function(){
 
 
 //**********Manage Item Function************
-
   function manageItems(){
       //First List
       $('li').find('.button-0').click(function(){
@@ -22,6 +21,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-0').hide();
          }
+         $('.delete-list-0').click(function(){
+           $('.item-0').remove();
+         });
       });
       //Second List
       $('li').find('.button-1').click(function(){
@@ -37,6 +39,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-1').hide();
          }
+         $('.delete-list-1').click(function(){
+           $('.item-1').remove();
+         });
       });
       //Third List
       $('li').find('.button-2').click(function(){
@@ -52,6 +57,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-2').hide();
          }
+         $('.delete-list-2').click(function(){
+           $('.item-2').remove();
+         });
       });
       //Fourth List
       $('li').find('.button-3').click(function(){
@@ -67,6 +75,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-3').hide();
          }
+         $('.delete-list-3').click(function(){
+           $('.item-3').remove();
+         });
       });
       //Fifth List
       $('li').find('.button-4').click(function(){
@@ -82,6 +93,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-4').hide();
          }
+         $('.delete-list-4').click(function(){
+           $('.item-4').remove();
+         });
       });
       //Sixth List
       $('li').find('.button-5').click(function(){
@@ -97,6 +111,9 @@ $(document).ready(function(){
          } else if(!$(this).is(':checked')){
           $('.delete-list-5').hide();
          }
+         $('.delete-list-5').click(function(){
+           $('.item-5').remove();
+         });
       });
   }
 
@@ -106,7 +123,7 @@ $(document).ready(function(){
     var maxAppend = 0;
     if (maxAppend >= 6) return;
 
-    var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li><br>');
+    var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li>');
     var deleteButton = $('<button id="delete-list"><img src="images/delete.png" alt=""></button>');
     var dropdown =$('<div id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button>Done</button></p></div>');
     var wholeList = $(list).add(dropdown);
