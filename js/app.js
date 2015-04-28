@@ -2,15 +2,18 @@ $(document).ready(function(){
 
 
   $('.add-item').click(addItem);
-  $('.active').on('mouseenter', manageItems);
+
+
+    $('.active').on('click','.button-0, .button-1',manageItems);
+
 
 
 //**********Manage Item Function************
   function manageItems(){
       //First List
       $('li').find('.button-0').click(function(){
-        event.stopPropagation();
-        $('.dropdown-0').slideUp();
+         event.stopPropagation();
+         $('.dropdown-0').slideUp();
       });
       $('.item-0').find($('[value="New Items"]')).dblclick(function(){
         $('.dropdown-0').slideDown();
