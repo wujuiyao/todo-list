@@ -7,44 +7,11 @@ $(document).ready(function(){
   var allCloseButtons =['.button-0', '.button-1', '.button-2', '.button-3', '.button-4', '.button-5'];
 
 
-  $('.active').on('click',allCloseButtons,function(){
-    //this allCloseButtons will effect
-      for(var i = 0; i <= 5; i++){
-        $('.button-'+i).data('clicked', true);
-        if($('.button-'+i).data('clicked')){
-          $('.dropdown-'+i).slideUp();
-        }
-       }
+  for (var i = 0; i <= 5; i++){
+    $('.active').on('click','.button-'+i, function(){
+        $(this).parentsUntil('.details').slideUp();
     });
-
-//**********Close Dropdown Function************
-function closeButton(){
-
-    $('.button-0').data('clicked', true);
-      if($('.button-'+0).data('clicked')){
-        $('.dropdown-'+0).slideUp();
-      }
-    $('.button-1').data('clicked', true);
-      if($('.button-1').data('clicked')){
-        $('.dropdown-1').slideUp();
-      }
-    $('.button-2').data('clicked', true);
-      if($('.button-2').data('clicked')){
-        $('.dropdown-2').slideUp();
-      }
-    $('.button-3').data('clicked', true);
-      if($('.button-3').data('clicked')){
-        $('.dropdown-3').slideUp();
-      }
-    $('.button-4').data('clicked', true);
-      if($('.button-4').data('clicked')){
-        $('.dropdown-4').slideUp();
-      }
-    $('.button-5').data('clicked', true);
-      if($('.button-5').data('clicked')){
-        $('.dropdown-5').slideUp();
-      }
-}
+  }
 
 
 //**********Manage Item Function************
@@ -141,8 +108,8 @@ function closeButton(){
     if (maxAppend >= 5) return;
 
     var list =$('<li><input type="checkbox" name="" value="item" ><input type="text" name="" value="New Items" ></li>');
-    var deleteButton = $('<button id="delete-list"><img src="images/delete.png" alt=""></button>');
-    var dropdown =$('<div id="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button>Done</button></p></div>');
+    var deleteButton = $('<button id="delete-list" class="delete-list"><img src="images/delete.png" alt=""></button>');
+    var dropdown =$('<div class="details"><div id="dropdown" class="dropdown"><p class="quantity">Quantity:<input type="text" name="" value=""></p><p class="notes"><input type="text" name="" value="Notes:"><button>Done</button></p></div></div>');
     var wholeList = $(list).add(dropdown);
                     maxAppend++;
 
@@ -169,3 +136,26 @@ function closeButton(){
 
 //    var allDropdowns = '.dropdown-';
 //   //  $(allDropdowns+i).slideUp();
+
+// for(var i = 0; i <= 5; i++){
+//   $('.button-'+i).data('clicked', true);
+//   if($('.button-0').data('clicked')){
+//     $('.dropdown-0').slideUp();
+//   }
+//   if($('.button-1').data('clicked')){
+//     $('.dropdown-1').slideUp();
+//   }
+//  }
+
+// for(var i = 0; i <= 5; i++){
+//   $('.button-'+i).data('clicked', true);
+//   if($('.button-'+i).data('clicked')){
+//     $('.dropdown-'+i).slideUp();
+//   }
+//
+//  }
+
+
+// $('.active').on('click','.button-0',function(){
+//   $('.dropdown-0').slideUp();
+//   });
