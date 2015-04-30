@@ -4,103 +4,29 @@ $(document).ready(function(){
 
   $('.add-item').click(addItem);
 
-  var allCloseButtons =['.button-0', '.button-1', '.button-2', '.button-3', '.button-4', '.button-5'];
-
-
   for (var i = 0; i <= 5; i++){
     $('.active').on('click','.button-'+i, function(){
         $(this).parentsUntil('.details').slideUp();
     });
   }
 
-
-//**********Manage Item Function************
-  function manageItems(){
-      //First List
-      $('.item-0').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-0').slideDown();
-      });
-      $('.item-0 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-0').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-0').hide();
-         }
-         $('.delete-list-0').click(function(){
-           $('.item-0').remove();
-         });
-      });
-      //Second List
-      $('.item-1').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-1').slideDown();
-      });
-      $('.item-1 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-1').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-1').hide();
-         }
-         $('.delete-list-1').click(function(){
-           $('.item-1').remove();
-         });
-      });
-      //Third List
-      $('.item-2').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-2').slideDown();
-      });
-      $('.item-2 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-2').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-2').hide();
-         }
-         $('.delete-list-2').click(function(){
-           $('.item-2').remove();
-         });
-      });
-      //Fourth List
-      $('.item-3').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-3').slideDown();
-      });
-      $('.item-2 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-3').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-3').hide();
-         }
-         $('.delete-list-3').click(function(){
-           $('.item-3').remove();
-         });
-      });
-      //Fifth List
-      $('.item-4').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-4').slideDown();
-      });
-      $('.item-4 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-4').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-4').hide();
-         }
-         $('.delete-list-4').click(function(){
-           $('.item-4').remove();
-         });
-      });
-      //Sixth List
-      $('.item-5').find($('[value="New Items"]')).dblclick(function(){
-        $('.dropdown-5').slideDown();
-      });
-      $('.item-5 :checkbox').click(function(){
-         if($(this).is(':checked')){
-          $('.delete-list-5').show();
-         } else if(!$(this).is(':checked')){
-          $('.delete-list-5').hide();
-         }
-         $('.delete-list-5').click(function(){
-           $('.item-5').remove();
-         });
-      });
+  for (var a = 0; a <= 5; a++){
+    $('.active').on('dblclick','.item-'+a+' [value="New Items"]',function(){
+      $('.dropdown, .notes').show();
+    });
   }
+
+  $('.item-0 :checkbox').on('click',function(){
+    if($(this).is(':checked')){
+     $('.delete-list-0').show();
+    } else if(!$(this).is(':checked')){
+     $('.delete-list').hide();
+    }
+    $('.delete-list-0').click(function(){
+      $('.item-0').remove();
+    });
+  });
+
 
 //**********Add Item Function************
   function addItem(){
@@ -120,9 +46,10 @@ $(document).ready(function(){
     $('.active li').addClass(function(index){
       return "item-" + index;
     });
-    $('.active li').find('div').addClass(function(index){
+    $('.active li').find('#dropdown').addClass(function(index){
       return "dropdown-" + index;
     });
+
     $('.active li').find('#dropdown button').addClass(function(index){
       return "button-" + index;
     });
@@ -135,7 +62,7 @@ $(document).ready(function(){
 });
 
 //    var allDropdowns = '.dropdown-';
-//   //  $(allDropdowns+i).slideUp();
+//    $(allDropdowns+i).slideUp();
 
 // for(var i = 0; i <= 5; i++){
 //   $('.button-'+i).data('clicked', true);
