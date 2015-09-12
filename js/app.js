@@ -5,7 +5,7 @@ $(document).ready(function(){
   $('.add-item').click(addItem);
 
   $('.active').on('click','button', function(){
-    for(var i = 0; i <= 5; i++){
+    for(var i = 0; i <= 20; i++){
       if($(this).is('.button-'+i)){
         $('.dropdown-'+i).slideUp();
       }
@@ -13,7 +13,7 @@ $(document).ready(function(){
   });
 
   $('.active').on('dblclick','.items [value="New Items"]',function(){
-    for(var a = 0; a <= 5; a++){
+    for(var a = 0; a <= 20; a++){
       if($(this).is('.item-'+a+' [value="New Items"]')){
         $('.dropdown-'+a).slideDown();
       }
@@ -21,7 +21,7 @@ $(document).ready(function(){
   });
 
   $('.active').on('click','.items :checkbox',function(){
-    for(var b = 0; b <= 5; b++){
+    for(var b = 0; b <= 20; b++){
       if($(this).is('.item-'+b+' :checked')){
        $('.delete-list-'+b).show();
      }else if(!$(this).is('.item-'+b+' :checked')){
@@ -31,7 +31,7 @@ $(document).ready(function(){
   });
 
 $('.active').on('click','.delete-list',function(){
-  for (var c = 0; c <= 5; c++){
+  for (var c = 0; c <= 20; c++){
     if($(this).is('.delete-list-'+c)){
       $('.item-'+c).remove();
     }
@@ -47,7 +47,7 @@ $('.active').on('click','.delete-list',function(){
     var wholeList = $(list).add(dropdown);
                     maxAppend++;
 
-    if (maxAppend >= 5){
+    if (maxAppend >= 20){
       return;
     }
 
